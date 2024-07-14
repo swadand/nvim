@@ -1,11 +1,23 @@
 return {
-	"folke/trouble.nvim",
-	dependencies = { 
-		"nvim-tree/nvim-web-devicons",
-		"folke/lsp-colors.nvim"
+	{
+		"folke/trouble.nvim",
+		opts = {},
+		cmd = "Trouble",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+			"folke/lsp-colors.nvim",
+		},
+		keys = {
+			{
+				"<leader>tg",
+				"<cmd>Trouble diagnostics toggle<cr>",
+				desc = "Diagnostics (Trouble)",
+			},
+			{
+				"<leader>tt",
+				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+				desc = "Buffer Diagnostics (Trouble)",
+			},
+		},
 	},
-	keys = {
-		-- change a keymap
-		{ "<leader>tt", "<cmd>TroubleToggle<cr>", desc = "Code Problems" },
-	}
 }
